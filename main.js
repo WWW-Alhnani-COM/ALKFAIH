@@ -7,19 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // تحسين التنقل السلس
     setupSmoothScrolling();
     
-    // تتبع أحداث النقر
-    setupEventTracking();
-    
     // إعداد تأثيرات التحميل
     setupLoadingEffects();
 });
 
 // تحديث السنة الحالية
 function updateCurrentYear() {
-    const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
+    const yearElements = document.querySelectorAll('#current-year');
+    yearElements.forEach(element => {
+        element.textContent = new Date().getFullYear();
+    });
 }
 
 // تحسين التنقل السلس
@@ -42,33 +39,8 @@ function setupSmoothScrolling() {
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    // تحديث عنوان URL بدون إعادة تحميل الصفحة
-                    history.pushState(null, null, href);
                 }
             }
-        });
-    });
-}
-
-// تتبع أحداث النقر
-function setupEventTracking() {
-    const whatsappBtn = document.querySelector('.btn-whatsapp');
-    
-    if (whatsappBtn) {
-        whatsappBtn.addEventListener('click', function() {
-            console.log('تم النقر على زر واتساب');
-            // يمكن إضافة Google Analytics هنا
-            // gtag('event', 'click', { 'event_category': 'WhatsApp', 'event_label': 'Contact Click' });
-        });
-    }
-    
-    // تتبع نقرات القائمة
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            const linkText = this.textContent;
-            console.log(`تم النقر على: ${linkText}`);
         });
     });
 }
@@ -114,12 +86,6 @@ function scrollToTop() {
     });
 }
 
-// دالة لإرسال بيانات نموذج (يمكن توسيعها لاحقًا)
-function submitContactForm(formData) {
-    console.log('تم إرسال بيانات النموذج:', formData);
-    // هنا يمكن إضافة كود لإرسال البيانات إلى الخادم
-}
-
 // دالة للتحقق من صحة البريد الإلكتروني
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -130,18 +96,4 @@ function isValidEmail(email) {
 function isValidSaudiPhone(phone) {
     const phoneRegex = /^(009665|9665|\+9665|05)([0-9]{8})$/;
     return phoneRegex.test(phone);
-}
-
-// تصدير الوظائف للاستخدام في ملفات أخرى
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        updateCurrentYear,
-        setupSmoothScrolling,
-        setupEventTracking,
-        setupLoadingEffects,
-        scrollToTop,
-        submitContactForm,
-        isValidEmail,
-        isValidSaudiPhone
-    };
 }
