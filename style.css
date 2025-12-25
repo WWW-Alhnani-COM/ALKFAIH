@@ -1,7 +1,4 @@
-/* الخطوط العربية من Google Fonts */
-/* استيراد الخطوط في CSS أيضاً للاحتياط */
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&family=Changa:wght@400;500;600;700&display=swap');
-
+/* إعادة تعيين المفاتيح الأساسية */
 * {
     margin: 0;
     padding: 0;
@@ -10,14 +7,14 @@
 
 body, html {
     height: 100%;
-    font-family: 'Tajawal', 'Amiri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     direction: rtl;
     line-height: 1.7;
-    font-weight: 400;
     color: #333;
+    background: #f8f9fa;
 }
 
-/* قسم الهيرو مع الخلفية */
+/* قسم الهيرو */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -31,7 +28,6 @@ body, html {
     overflow: hidden;
 }
 
-/* طبقة تظليل فوق الصورة */
 .overlay {
     position: absolute;
     top: 0;
@@ -62,14 +58,14 @@ body, html {
     color: white;
     font-size: 32px;
     font-weight: 800;
-    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-family: 'Cairo', sans-serif;
     letter-spacing: -0.5px;
 }
 
 .logo span {
     color: #3498db;
     font-weight: 800;
-    font-family: 'Changa', 'Cairo', sans-serif;
+    font-family: 'Changa', sans-serif;
 }
 
 .nav-links {
@@ -113,7 +109,7 @@ body, html {
     line-height: 1.3;
     font-weight: 700;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    font-family: 'Changa', 'Cairo', sans-serif;
+    font-family: 'Changa', sans-serif;
     letter-spacing: -0.5px;
 }
 
@@ -124,7 +120,7 @@ body, html {
     background-clip: text;
     color: transparent;
     font-weight: 800;
-    font-family: 'Cairo', 'Changa', sans-serif;
+    font-family: 'Cairo', sans-serif;
 }
 
 .hero-content p {
@@ -136,7 +132,7 @@ body, html {
     margin-right: auto;
     margin-left: auto;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    font-family: 'Amiri', 'Tajawal', serif;
+    font-family: 'Amiri', serif;
     font-weight: 400;
 }
 
@@ -162,34 +158,13 @@ body, html {
     transition: all 0.3s ease;
     box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
     border: 2px solid #25d366;
-    font-family: 'Tajawal', 'Cairo', sans-serif;
+    font-family: 'Tajawal', sans-serif;
 }
 
 .btn-whatsapp:hover {
     background: linear-gradient(45deg, #128c7e, #25d366);
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
-}
-
-.btn-outline {
-    border: 2px solid white;
-    color: white;
-    padding: 18px 45px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    font-family: 'Tajawal', sans-serif;
-}
-
-.btn-outline:hover {
-    background: white;
-    color: #2c3e50;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* بار الإحصائيات */
@@ -209,7 +184,7 @@ body, html {
     color: white;
     text-align: center;
     transition: transform 0.3s ease;
-    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-family: 'Cairo', sans-serif;
 }
 
 .stat-item:hover {
@@ -232,78 +207,7 @@ body, html {
     font-size: 20px;
     font-weight: 600;
     display: block;
-    font-family: 'Cairo', 'Tajawal', sans-serif;
-}
-
-/* أقسام المحتوى الإضافية */
-.content-section {
-    padding: 60px 8%;
-    background: #f8f9fa;
-    color: #333;
-}
-
-.content-section:nth-child(even) {
-    background: white;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.content-section h2 {
-    font-size: 2.8rem;
-    color: #2c3e50;
-    margin-bottom: 30px;
-    text-align: center;
-    font-family: 'Changa', 'Cairo', sans-serif;
-    font-weight: 700;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.content-section h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 50%;
-    transform: translateX(50%);
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(to left, #3498db, #25d366);
-    border-radius: 2px;
-}
-
-.content-section p {
-    font-size: 1.3rem;
-    line-height: 1.9;
-    margin-bottom: 25px;
-    color: #555;
-    font-family: 'Amiri', 'Tajawal', serif;
-    text-align: justify;
-}
-
-.content-section ul {
-    list-style: none;
-    padding-right: 20px;
-}
-
-.content-section li {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    padding-right: 30px;
-    position: relative;
-    font-family: 'Tajawal', sans-serif;
-    font-weight: 400;
-}
-
-.content-section li:before {
-    content: "✓";
-    color: #25d366;
-    position: absolute;
-    right: -25px;
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-family: 'Cairo', sans-serif;
 }
 
 /* الفوتر */
@@ -316,6 +220,12 @@ body, html {
     font-family: 'Tajawal', sans-serif;
 }
 
+.footer .back-to-top {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
 /* تحسينات للجوال */
 @media (max-width: 1024px) {
     .hero-content h1 {
@@ -325,20 +235,11 @@ body, html {
     .hero-content p {
         font-size: 1.2rem;
     }
-    
-    .content-section h2 {
-        font-size: 2.3rem;
-    }
-    
-    .content-section p {
-        font-size: 1.1rem;
-    }
 }
 
 @media (max-width: 768px) {
     .hero-section {
         background-attachment: scroll;
-        background-position: center;
     }
     
     .navbar {
@@ -350,7 +251,8 @@ body, html {
     }
     
     .nav-links {
-        display: none;
+        gap: 20px;
+        font-size: 16px;
     }
     
     .hero-content {
@@ -360,23 +262,12 @@ body, html {
     .hero-content h1 {
         font-size: 2.3rem;
         padding: 0 10px;
-        line-height: 1.4;
     }
     
     .hero-content p {
         font-size: 1.1rem;
         padding: 0 15px;
         margin-bottom: 40px;
-        line-height: 1.7;
-    }
-    
-    .content-section h2 {
-        font-size: 2rem;
-    }
-    
-    .content-section p {
-        font-size: 1rem;
-        line-height: 1.7;
     }
     
     .cta-buttons {
@@ -386,7 +277,7 @@ body, html {
         padding: 0 20px;
     }
     
-    .btn-whatsapp, .btn-outline {
+    .btn-whatsapp {
         width: 100%;
         max-width: 350px;
         justify-content: center;
@@ -401,10 +292,6 @@ body, html {
         padding: 30px 20px;
     }
     
-    .stat-item i {
-        font-size: 28px;
-    }
-    
     .stat-item span {
         font-size: 18px;
     }
@@ -417,22 +304,13 @@ body, html {
     
     .hero-content p {
         font-size: 1rem;
-        line-height: 1.6;
     }
     
     .logo {
         font-size: 20px;
     }
     
-    .content-section h2 {
-        font-size: 1.8rem;
-    }
-    
-    .content-section p {
-        font-size: 0.95rem;
-    }
-    
-    .btn-whatsapp, .btn-outline {
+    .btn-whatsapp {
         padding: 14px 25px;
         font-size: 16px;
     }
@@ -459,175 +337,16 @@ html {
     scroll-behavior: smooth;
 }
 
-/* تحسين مظهر الروابط */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* تحسين مظهر العناوين */
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 1rem;
-    line-height: 1.3;
-}
-
-/* ظلال للنصوص في الوضع الداكن */
-.dark-text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* تحسين contrast للألوان */
+/* إصلاحات الوصول */
 :focus {
     outline: 2px solid #3498db;
-    outline-offset: 3px;
-}
-/* قسم الخريطة */
-.map-section {
-    padding: 80px 8%;
-    background: white;
-    text-align: center;
+    outline-offset: 2px;
 }
 
-.map-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    font-size: 2.8rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-family: 'Changa', sans-serif;
-    font-weight: 700;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 50%;
-    transform: translateX(50%);
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(to left, #3498db, #25d366);
-    border-radius: 2px;
-}
-
-.map-description {
-    font-size: 1.3rem;
-    color: #555;
-    margin-bottom: 40px;
-    font-family: 'Amiri', serif;
-    max-width: 800px;
-    margin-right: auto;
-    margin-left: auto;
-    line-height: 1.8;
-}
-
-.map-wrapper {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    margin: 30px 0;
-    border: 1px solid #eaeaea;
-}
-
-.map-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.address-box {
-    background: #f8f9fa;
-    border-radius: 10px;
-    padding: 25px;
-    margin-top: 30px;
-    text-align: center;
-    border-right: 5px solid #3498db;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.address-box h3 {
-    color: #2c3e50;
-    margin-bottom: 15px;
-    font-family: 'Cairo', sans-serif;
-    font-size: 1.8rem;
-}
-
-.address-box p {
-    color: #555;
-    font-size: 1.2rem;
-    font-family: 'Tajawal', sans-serif;
-    line-height: 1.6;
-    margin-bottom: 5px;
-}
-
-.address-box i {
-    color: #3498db;
-    margin-left: 10px;
-}
-
-/* الفوتر */
-.footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 30px;
-    font-size: 1.1rem;
-    font-family: 'Tajawal', sans-serif;
-}
-
-/* تحسينات للجوال لقسم الخريطة */
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 2rem;
+/* تأثيرات هامر للجوال */
+@media (hover: none) and (pointer: coarse) {
+    .btn-whatsapp {
+        min-height: 44px;
+        min-width: 44px;
     }
-    
-    .map-wrapper {
-        height: 350px;
-    }
-    
-    .address-box {
-        padding: 20px 15px;
-    }
-    
-    .address-box h3 {
-        font-size: 1.5rem;
-    }
-    
-    .address-box p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .map-wrapper {
-        height: 300px;
-    }
-}
-
-/* تحميل سلس للصفحة */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.map-section {
-    animation: fadeIn 1s ease-out;
 }
