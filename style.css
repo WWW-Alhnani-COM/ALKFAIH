@@ -42,6 +42,7 @@ body, html {
 }
 
 /* القائمة العلوية */
+/* القائمة العلوية - النسخة الأصلية */
 .navbar {
     position: relative;
     z-index: 10;
@@ -50,8 +51,8 @@ body, html {
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(5px);
-    background: rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.7); /* أكثر عتامة وأقرب للون الأسود */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .logo {
