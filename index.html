@@ -4,18 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags الأساسية -->
+    <!-- SEO Meta Tags -->
     <title>شركة كفاءات العالم للأستقدام - استقدام عاملات منزلية مدربة في السعودية</title>
     <meta name="description" content="شركة كفاءات العالم تقدم خدمات استقدام العاملات المنزلية المدربات في السعودية. نوفر عاملات محترفات من مختلف الجنسيات بضمان وجودة عالية.">
     <meta name="keywords" content="استقدام, عاملات منزلية, استقدام منازل, عمالة مدربة, استقدام في السعودية, كفاءات العالم, خادمات, شغالات">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&family=Changa:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Open Graph -->
     <meta property="og:title" content="شركة كفاءات العالم للأستقدام">
@@ -57,675 +49,40 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="a.png">
     
-    <style>
-        /* إعادة تعيين المفاتيح الأساسية */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body, html {
-            height: 100%;
-            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            direction: rtl;
-            line-height: 1.7;
-            color: #333;
-            background: #f8f9fa;
-        }
-
-        /* قسم الهيرو */
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            background: url('https://raw.githubusercontent.com/WWW-Alhnani-COM/ALKFAIH/main/a.png') 
-                        no-repeat center center/cover;
-            background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow: hidden;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, 
-                rgba(0, 0, 0, 0.75) 0%, 
-                rgba(0, 0, 0, 0.55) 50%,
-                rgba(0, 0, 0, 0.35) 100%);
-            z-index: 1;
-        }
-
-        /* القائمة العلوية */
-        .navbar {
-            position: relative;
-            z-index: 10;
-            padding: 25px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(5px);
-            background: rgba(0, 0, 0, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .logo {
-            color: white;
-            font-size: 32px;
-            font-weight: 800;
-            font-family: 'Cairo', sans-serif;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: #3498db;
-            font-weight: 800;
-            font-family: 'Changa', sans-serif;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 40px;
-        }
-
-        .nav-links li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 500;
-            font-family: 'Tajawal', sans-serif;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 25px;
-        }
-
-        .nav-links li a:hover {
-            color: #25d366;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* المحتوى الرئيسي */
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            color: white;
-            padding: 0 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 10vh;
-        }
-
-        .hero-content h1 {
-            font-size: 3.8rem;
-            margin-bottom: 25px;
-            line-height: 1.3;
-            font-weight: 700;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-            font-family: 'Changa', sans-serif;
-            letter-spacing: -0.5px;
-        }
-
-        .highlight {
-            color: #3498db;
-            background: linear-gradient(45deg, #3498db, #25d366);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 800;
-            font-family: 'Cairo', sans-serif;
-        }
-
-        .hero-content p {
-            font-size: 1.4rem;
-            margin-bottom: 50px;
-            opacity: 0.95;
-            line-height: 1.8;
-            max-width: 800px;
-            margin-right: auto;
-            margin-left: auto;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-            font-family: 'Amiri', serif;
-            font-weight: 400;
-        }
-
-        /* الأزرار */
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .btn-whatsapp {
-            background: linear-gradient(45deg, #25d366, #128c7e);
-            color: white;
-            padding: 18px 45px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-            border: 2px solid #25d366;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        .btn-whatsapp:hover {
-            background: linear-gradient(45deg, #128c7e, #25d366);
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
-        }
-
-        /* بار الإحصائيات */
-        .stats-bar {
-            position: relative;
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(15px);
-            display: flex;
-            justify-content: space-around;
-            padding: 40px 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            margin-top: auto;
-        }
-
-        .stat-item {
-            color: white;
-            text-align: center;
-            transition: transform 0.3s ease;
-            font-family: 'Cairo', sans-serif;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-item i {
-            display: block;
-            font-size: 32px;
-            margin-bottom: 12px;
-            color: #3498db;
-            transition: color 0.3s ease;
-        }
-
-        .stat-item:hover i {
-            color: #25d366;
-        }
-
-        .stat-item span {
-            font-size: 20px;
-            font-weight: 600;
-            display: block;
-            font-family: 'Cairo', sans-serif;
-        }
-
-        /* قسم الخريطة */
-        .map-section {
-            padding: 80px 8%;
-            background: white;
-            text-align: center;
-        }
-
-        .map-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-family: 'Changa', sans-serif;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 50%;
-            transform: translateX(50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(to left, #3498db, #25d366);
-            border-radius: 2px;
-        }
-
-        .map-description {
-            font-size: 1.3rem;
-            color: #555;
-            margin-bottom: 40px;
-            font-family: 'Amiri', serif;
-            max-width: 800px;
-            margin-right: auto;
-            margin-left: auto;
-            line-height: 1.8;
-        }
-
-        .map-wrapper {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            margin: 30px 0;
-            border: 1px solid #eaeaea;
-        }
-
-        #customMap {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .address-box {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px;
-            margin-top: 30px;
-            text-align: center;
-            border-right: 5px solid #3498db;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .address-box h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-family: 'Cairo', sans-serif;
-            font-size: 1.8rem;
-        }
-
-        .address-box p {
-            color: #555;
-            font-size: 1.2rem;
-            font-family: 'Tajawal', sans-serif;
-            line-height: 1.6;
-            margin-bottom: 5px;
-        }
-
-        .address-box i {
-            color: #3498db;
-            margin-left: 10px;
-        }
-
-        .address-box a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .address-box a:hover {
-            color: #25d366;
-            text-decoration: underline;
-        }
-
-        /* عناصر التحكم في الخريطة */
-        .map-controls {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .map-btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-family: 'Tajawal', sans-serif;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .map-btn:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(41, 128, 185, 0.3);
-        }
-
-        .map-btn i {
-            font-size: 18px;
-        }
-
-        .map-btn.directions {
-            background: #25d366;
-        }
-
-        .map-btn.directions:hover {
-            background: #1da851;
-        }
-
-        /* الفوتر */
-        .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            font-size: 1.1rem;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        /* دبوس مخصص */
-        .custom-marker {
-            position: absolute;
-            width: 60px;
-            height: 80px;
-            transform: translate(-50%, -100%);
-            z-index: 100;
-            animation: bounce 2s infinite;
-        }
-
-        .marker-pin {
-            width: 35px;
-            height: 35px;
-            border-radius: 50% 50% 50% 0;
-            background: #3498db;
-            position: absolute;
-            transform: rotate(-45deg);
-            left: 50%;
-            top: 0;
-            margin-left: -17.5px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-        }
-
-        .marker-pin::after {
-            content: '';
-            width: 27px;
-            height: 27px;
-            margin: 4px;
-            background: white;
-            position: absolute;
-            border-radius: 50%;
-        }
-
-        .marker-content {
-            position: absolute;
-            top: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            padding: 10px 15px;
-            border-radius: 10px;
-            white-space: nowrap;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-            font-family: 'Tajawal', sans-serif;
-            font-size: 14px;
-            color: #2c3e50;
-            font-weight: bold;
-            border: 2px solid #3498db;
-            min-width: 180px;
-            text-align: center;
-        }
-
-        .marker-content::after {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid #3498db;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translate(-50%, -100%); }
-            50% { transform: translate(-50%, -105%); }
-        }
-
-        /* نافذة المعلومات */
-        .info-window-content {
-            font-family: 'Tajawal', sans-serif;
-            text-align: right;
-            padding: 10px;
-            max-width: 250px;
-        }
-
-        .info-window-content h4 {
-            color: #3498db;
-            margin: 0 0 10px 0;
-            font-size: 16px;
-        }
-
-        .info-window-content p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-
-        .info-btn {
-            background: #25d366;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            margin-top: 10px;
-            cursor: pointer;
-            font-family: 'Tajawal', sans-serif;
-            width: 100%;
-            transition: background 0.3s ease;
-        }
-
-        .info-btn:hover {
-            background: #1da851;
-        }
-
-        /* تحسينات للجوال */
-        @media (max-width: 1024px) {
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2.3rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-section {
-                background-attachment: scroll;
-            }
-            
-            .navbar {
-                padding: 20px 5%;
-            }
-            
-            .logo {
-                font-size: 24px;
-            }
-            
-            .nav-links {
-                gap: 20px;
-                font-size: 16px;
-            }
-            
-            .hero-content {
-                padding-top: 15vh;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.3rem;
-                padding: 0 10px;
-            }
-            
-            .hero-content p {
-                font-size: 1.1rem;
-                padding: 0 15px;
-                margin-bottom: 40px;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .map-wrapper {
-                height: 400px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                padding: 0 20px;
-            }
-            
-            .btn-whatsapp {
-                width: 100%;
-                max-width: 350px;
-                justify-content: center;
-                text-align: center;
-                font-size: 18px;
-                padding: 16px 35px;
-            }
-            
-            .stats-bar {
-                flex-direction: column;
-                gap: 30px;
-                padding: 30px 20px;
-            }
-            
-            .stat-item span {
-                font-size: 18px;
-            }
-            
-            .map-controls {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .map-btn {
-                width: 100%;
-                max-width: 250px;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 1.9rem;
-            }
-            
-            .hero-content p {
-                font-size: 1rem;
-            }
-            
-            .logo {
-                font-size: 20px;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .map-wrapper {
-                height: 350px;
-            }
-            
-            .btn-whatsapp {
-                padding: 14px 25px;
-                font-size: 16px;
-            }
-            
-            .address-box {
-                padding: 20px 15px;
-            }
-            
-            .address-box h3 {
-                font-size: 1.5rem;
-            }
-            
-            .address-box p {
-                font-size: 1rem;
-            }
-            
-            .marker-content {
-                min-width: 150px;
-                font-size: 12px;
-                padding: 8px 12px;
-            }
-        }
-
-        /* تحميل سلس للصفحة */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-content, .stats-bar, .map-section {
-            animation: fadeIn 1s ease-out;
-        }
-
-        /* تحسين smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* إصلاحات الوصول */
-        :focus {
-            outline: 2px solid #3498db;
-            outline-offset: 2px;
-        }
-
-        /* تأثيرات هامر للجوال */
-        @media (hover: none) and (pointer: coarse) {
-            .btn-whatsapp, .map-btn {
-                min-height: 44px;
-                min-width: 44px;
-            }
-        }
-    </style>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&family=Changa:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/map.css">
+    
 </head>
 <body>
 
-    <!-- قسم الهيرو الرئيسي -->
-    <div class="hero-section">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#home" style="color: inherit; text-decoration: none;">
+                كفاءات العالم <span>للاستقدام</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#map">خريطة الموقع</a></li>
+            <li><a href="https://wa.me/966552425251" target="_blank">تواصل معنا</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section" id="home">
         <div class="overlay"></div>
         
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#home" style="color: inherit; text-decoration: none;">
-                    كفاءات العالم <span>للاستقدام</span>
-                </a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#map">خريطة الموقع</a></li>
-                <li><a href="https://wa.me/966552425251" target="_blank">تواصل معنا</a></li>
-            </ul>
-        </nav>
-
-        <main class="hero-content" id="home">
+        <main class="hero-content">
             <h1>استقدام نخبة من <span class="highlight">العاملات والمدربات</span></h1>
             <p>نوفر لكم أفضل الكوادر المنزلية المختارة بعناية لتلبية احتياجات الأسرة السعودية، بجودة وموثوقية عالية.</p>
             
@@ -752,14 +109,14 @@
         </section>
     </div>
 
-    <!-- قسم الخريطة -->
+    <!-- Map Section -->
     <section class="map-section" id="map" aria-label="خريطة موقع الشركة">
         <div class="map-container">
             <h2 class="section-title">موقعنا على الخريطة</h2>
             <p class="map-description">يمكنكم زيارة مكتبنا في جازان للتعرف على خدماتنا مباشرةً. نحن هنا لخدمتكم على مدار الأسبوع.</p>
             
             <div class="map-wrapper">
-                <!-- خريطة جوجل ماب المضمنة (بدون API) -->
+                <!-- خريطة جوجل ماب المضمنة -->
                 <div id="customMap">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3717.759634755655!2d42.57454537505811!3d16.88913408055591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15653d3d0f2d11f5%3A0x7e30c1b4d5c8d2c2!2sGGDB7677%2C%202618%2C%20%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%B7%D8%A7%D8%B1%2C%20%D8%AC%D8%A7%D8%B2%D8%A7%D9%86%2082722%2C%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9!5e0!3m2!1sen!2sus!4v1648159472347!5m2!1sen!2sus" 
@@ -774,7 +131,7 @@
                     </iframe>
                     
                     <!-- دبوس مخصص يظهر فوق الخريطة -->
-                    <div class="custom-marker" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%);">
+                    <div class="custom-marker">
                         <div class="marker-pin"></div>
                         <div class="marker-content">شركة كفاءات العالم</div>
                     </div>
@@ -782,16 +139,16 @@
                 
                 <!-- عناصر التحكم في الخريطة -->
                 <div class="map-controls">
-                    <button class="map-btn" onclick="zoomMap('in')" aria-label="تكبير الخريطة">
+                    <button class="map-btn zoom-in" aria-label="تكبير الخريطة">
                         <i class="fas fa-search-plus"></i> تكبير
                     </button>
-                    <button class="map-btn" onclick="zoomMap('out')" aria-label="تصغير الخريطة">
+                    <button class="map-btn zoom-out" aria-label="تصغير الخريطة">
                         <i class="fas fa-search-minus"></i> تصغير
                     </button>
-                    <button class="map-btn" onclick="resetMapView()" aria-label="إعادة تعيين الخريطة">
+                    <button class="map-btn reset-map" aria-label="إعادة تعيين الخريطة">
                         <i class="fas fa-sync-alt"></i> إعادة تعيين
                     </button>
-                    <button class="map-btn directions" onclick="openDirections()" aria-label="الحصول على اتجاهات للوصول إلى المكتب">
+                    <button class="map-btn get-directions" aria-label="الحصول على اتجاهات للوصول إلى المكتب">
                         <i class="fas fa-directions"></i> الحصول على اتجاهات
                     </button>
                 </div>
@@ -808,105 +165,17 @@
         </div>
     </section>
 
-    <!-- الفوتر -->
+    <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <p>© <span id="current-year">2024</span> شركة كفاءات العالم للأستقدام. جميع الحقوق محفوظة.</p>
-        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.9;">
+        <p class="back-to-top">
             <a href="#home" style="color: #3498db; text-decoration: none;">العودة للأعلى ↑</a>
         </p>
     </footer>
 
-    <script>
-        // تحديث السنة الحالية
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // وظائف التحكم في الخريطة
-        function zoomMap(action) {
-            const iframe = document.querySelector('#customMap iframe');
-            const mapUrl = iframe.src;
-            
-            if (action === 'in') {
-                // إضافة تكبير للخريطة
-                const newZoom = getCurrentZoom(mapUrl) + 1;
-                iframe.src = updateZoomInUrl(mapUrl, newZoom);
-            } else if (action === 'out') {
-                // إضافة تصغير للخريطة
-                const newZoom = getCurrentZoom(mapUrl) - 1;
-                iframe.src = updateZoomInUrl(mapUrl, newZoom);
-            }
-        }
-        
-        function getCurrentZoom(url) {
-            // استخراج مستوى التكبير الحالي من الرابط
-            const match = url.match(/zoom=(\d+)/);
-            return match ? parseInt(match[1]) : 16;
-        }
-        
-        function updateZoomInUrl(url, zoom) {
-            // تحديث مستوى التكبير في رابط الخريطة
-            return url.replace(/zoom=\d+/, `zoom=${zoom}`);
-        }
-        
-        function resetMapView() {
-            // إعادة تعيين الخريطة إلى الوضع الافتراضي
-            const iframe = document.querySelector('#customMap iframe');
-            const baseUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3717.759634755655!2d42.57454537505811!3d16.88913408055591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15653d3d0f2d11f5%3A0x7e30c1b4d5c8d2c2!2sGGDB7677%2C%202618%2C%20%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%B7%D8%A7%D8%B1%2C%20%D8%AC%D8%A7%D8%B2%D8%A7%D9%86%2082722%2C%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9!5e0!3m2!1sen!2sus!4v1648159472347!5m2!1sen!2sus";
-            iframe.src = baseUrl;
-        }
-        
-        function openDirections() {
-            // فتح اتجاهات جوجل ماب
-            const destination = encodeURIComponent("GGDB7677، 2618، حي المطار، جازان 82722، السعودية");
-            window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`, '_blank', 'noopener,noreferrer');
-        }
-        
-        // تحسين النقر على روابط القائمة
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if(this.getAttribute('href') === '#home' || this.getAttribute('href') === '#map') {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if(targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-        
-        // إضافة تأثير للدبوس عند التمرير إلى قسم الخريطة
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const marker = document.querySelector('.custom-marker');
-                    marker.style.animation = 'bounce 2s infinite';
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        observer.observe(document.querySelector('.map-section'));
-        
-        // تتبع أحداث النقر
-        document.addEventListener('DOMContentLoaded', function() {
-            const whatsappBtn = document.querySelector('.btn-whatsapp');
-            const directionsBtn = document.querySelector('.directions');
-            
-            if(whatsappBtn) {
-                whatsappBtn.addEventListener('click', function() {
-                    console.log('تم النقر على زر واتساب');
-                });
-            }
-            
-            if(directionsBtn) {
-                directionsBtn.addEventListener('click', function() {
-                    console.log('تم طلب الاتجاهات');
-                });
-            }
-        });
-    </script>
-
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
+    
 </body>
 </html>
