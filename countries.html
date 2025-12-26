@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دول الاستقدام | شركة كفاءات العالم للأستقدام</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيقات خاصة بصفحة الدول */
+        .countries-hero {
+            background: url('https://raw.githubusercontent.com/WWW-Alhnani-COM/ALKFAIH/main/a.png') center/cover no-repeat;
+            min-height: 50vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .countries-hero::after {
+            content: '';
+            position: absolute;
+            top:0; left:0; right:0; bottom:0;
+            background: rgba(0,0,0,0.6);
+        }
+        .countries-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+        }
+        .countries-hero-content h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+        }
+        .countries-container {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            color: #555;
+            line-height: 1.8;
+        }
+        /* جدول الدول */
+        .countries-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+            overflow-x: auto;
+        }
+        .countries-table table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+        .countries-table thead {
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: white;
+        }
+        .countries-table th {
+            padding: 1.2rem 1.5rem;
+            font-weight: 600;
+            text-align: right;
+            font-family: 'Cairo', sans-serif;
+        }
+        .countries-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .countries-table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+        .country-flag {
+            width: 50px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+        .salary-range {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            color: #2ecc71;
+            direction: ltr;
+            display: inline-block;
+        }
+        .whatsapp-contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25d366;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Tajawal', sans-serif;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .whatsapp-contact-btn:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        /* قسم التواصل */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+            border-radius: 15px;
+        }
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        .contact-section p {
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .contact-method-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 280px;
+            transition: transform 0.3s ease;
+        }
+        .contact-method-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+        }
+        .contact-method-card i {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+            color: white;
+        }
+        .contact-method-card h3 {
+            margin-bottom: 1rem;
+            font-family: 'Cairo', sans-serif;
+        }
+        .contact-method-card p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        .big-whatsapp-btn {
+            background: white;
+            color: #25d366;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .big-whatsapp-btn:hover {
+            background: #25d366;
+            color: white;
+            transform: scale(1.05);
+        }
+        /* تنبيه حول الأسعار */
+        .salary-note {
+            background: #fff8e1;
+            border-right: 5px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            text-align: center;
+            color: #856404;
+            font-family: 'Tajawal', sans-serif;
+        }
+        .salary-note i {
+            color: #ffc107;
+            margin-left: 10px;
+        }
+        /* التجاوب مع الجوال */
+        @media (max-width: 992px) {
+            .countries-hero-content h1 { font-size: 2.5rem; }
+            .countries-table th, .countries-table td { padding: 1rem; }
+        }
+        @media (max-width: 768px) {
+            .countries-hero-content h1 { font-size: 2rem; }
+            .countries-container { padding: 3rem 5%; }
+            .contact-methods { flex-direction: column; align-items: center; }
+            .contact-method-card { width: 100%; max-width: 400px; }
+            .whatsapp-contact-btn { padding: 0.6rem 1.2rem; font-size: 0.85rem; }
+        }
+        @media (max-width: 480px) {
+            .countries-hero-content h1 { font-size: 1.8rem; }
+            .big-whatsapp-btn { padding: 0.9rem 1.8rem; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- نفس قائمة التنقل الموجودة في الصفحات الأخرى -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" style="color: inherit; text-decoration: none;">
+                كفاءات العالم <span>للاستقدام</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="countries.html" class="active">دول الاستقدام</a></li>
+            <li><a href="map.html">خريطة الموقع</a></li>
+            <li><a href="https://wa.me/966" target="_blank">تواصل معنا</a></li>
+        </ul>
+    </nav>
+
+    <!-- قسم البداية -->
+    <section class="countries-hero">
+        <div class="countries-hero-content">
+            <h1>دول الاستقدام</h1>
+            <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto;">تعرف على الجنسيات المتاحة والأجور المتوقعة لاستقدام العمالة المنزلية المدربة</p>
+        </div>
+    </section>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="countries-container">
+        <div class="section-intro">
+            <h2 style="color: #2c3e50; margin-bottom: 1rem;">اختر ما يناسب احتياجاتك</h2>
+            <p>نقدم في <strong>شركة كفاءات العالم</strong> خدمات استقدام عمالة منزلية مدربة من مجموعة من الدول، مع الالتزام بمعايير الجودة والكفاءة. تعرف على التفاصيل أدناه واتصل بنا لأي استفسار.</p>
+            <p><em>يمكن أن تختلف الأجور بناءً على خبرة العامل/ة، المؤهلات، ونوع العمل.</em></p>
+        </div>
+
+        <!-- جدول دول الاستقدام -->
+        <div class="countries-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>العلم</th>
+                        <th>اسم الدولة</th>
+                        <th>الجنسيات المتاحة</th>
+                        <th>نطاق الراتب الشهري المتوقع (ريال سعودي)</th>
+                        <th>الاستفسار المباشر</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://flagcdn.com/w320/ph.png" alt="علم الفلبين" class="country-flag"></td>
+                        <td><strong>الفلبين</strong></td>
+                        <td>ممرضات، مربيات أطفال، عاملات منزلية</td>
+                        <td><span class="salary-range">1,600 - 2,400</span></td>
+                        <td><a href="https://wa.me/966?text=مرحباً، أريد الاستفسار عن استقدام من الفلبين" class="whatsapp-contact-btn" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/w320/in.png" alt="علم الهند" class="country-flag"></td>
+                        <td><strong>الهند</strong></td>
+                        <td>طباخين، سائقين، عاملات منزلية</td>
+                        <td><span class="salary-range">1,200 - 2,000</span></td>
+                        <td><a href="https://wa.me/966?text=مرحباً، أريد الاستفسار عن استقدام من الهند" class="whatsapp-contact-btn" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/w320/bd.png" alt="علم بنغلاديش" class="country-flag"></td>
+                        <td><strong>بنغلاديش</strong></td>
+                        <td>عاملات منزلية، عمال نظافة، حراس أمن</td>
+                        <td><span class="salary-range">1,000 - 1,800</span></td>
+                        <td><a href="https://wa.me/966?text=مرحباً، أريد الاستفسار عن استقدام من بنغلاديش" class="whatsapp-contact-btn" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/w320/lk.png" alt="علم سريلانكا" class="country-flag"></td>
+                        <td><strong>سريلانكا</strong></td>
+                        <td>ممرضات مسنات، عاملات منزلية</td>
+                        <td><span class="salary-range">1,400 - 2,200</span></td>
+                        <td><a href="https://wa.me/966?text=مرحباً، أريد الاستفسار عن استقدام من سريلانكا" class="whatsapp-contact-btn" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/w320/et.png" alt="علم إثيوبيا" class="country-flag"></td>
+                        <td><strong>إثيوبيا</strong></td>
+                        <td>عاملات منزلية، عمال زراعة</td>
+                        <td><span class="salary-range">900 - 1,500</span></td>
+                        <td><a href="https://wa.me/966552425251?text=مرحباً، أريد الاستفسار عن استقدام من إثيوبيا" class="whatsapp-contact-btn" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/w320/ke.png" alt="علم كينيا" class="country-flag"></td>
+                        <td><strong>كينيا</strong></td>
+                        <td>عاملات منزلية، سائقين، حراس أمن</td>
+                        <td><span class="salary-range">1,100 - 1,700</span></td>
+                        <td><a href="https://wa.me/966?text=مرحباً، أريد الاستفسار عن استقدام من كينيا" class="whatsapp-contact-btn" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- تنبيه حول الأسعار -->
+        <div class="salary-note">
+            <p><i class="fas fa-info-circle"></i> <strong>ملاحظة هامة:</strong> نطاق الرواتب المذكور هو للمرجعية ويستند إلى متوسط أسعار السوق والمؤهلات الأساسية. السعر النهائي يعتمد على خبرة ومهارات العامل/ة المحدد، ونوع العقد (سكن داخلي/خارجي)، والشروط المتفق عليها. نضمن لك الشفافية الكاملة في جميع التكاليف قبل المضي قدماً في أي إجراء.</p>
+        </div>
+
+        <!-- قسم تواصل معنا -->
+        <section class="contact-section">
+            <h2><i class="fas fa-headset"></i> تواصل معنا الآن</h2>
+            <p>لديك سؤال محدد عن دولة معينة؟ تريد معرفة التكلفة الإجمالية؟ فريقنا متاح للإجابة على جميع استفساراتك وتقديم استشارة مجانية لتحديد أفضل خيار يناسب ميزانيتك واحتياجاتك.</p>
+
+            <a href="https://wa.me/966552425251" class="big-whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> ابدأ محادثة على واتساب الآن
+            </a>
+
+            <div class="contact-methods">
+                <div class="contact-method-card">
+                    <i class="fas fa-comment-dots"></i>
+                    <h3>واتساب فوري</h3>
+                    <p>للحصول على رد سريع ومباشر، راسلنا على الواتساب على مدار الساعة.</p>
+                    <a href="https://wa.me/966552425251" class="whatsapp-contact-btn" target="_blank">راسلنا الآن</a>
+                </div>
+                <div class="contact-method-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>اتصال هاتفي</h3>
+                    <p>يمكنك الاتصال بنا خلال أوقات العمل الرسمية من الأحد إلى الخميس.</p>
+                    <a href="tel:+966552425251" style="color: white; text-decoration: underline; font-weight:600;">+966 55 242 5251</a>
+                </div>
+                <div class="contact-method-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>أرسل لنا تفاصيل طلبك وسنرد عليك في غضون 24 ساعة عمل.</p>
+                    <a href="mailto:info@alkfaih.com" style="color: white; text-decoration: underline; font-weight:600;">info@alkfaih.com</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- زر العودة للرئيسية -->
+        <div class="back-to-home" style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" class="btn-outline">
+                <i class="fas fa-home"></i> العودة إلى الصفحة الرئيسية
+            </a>
+        </div>
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>كفاءات العالم للاستقدام</h3>
+                <p>شركة رائدة في مجال استقدام العمالة المنزلية المدربة في المملكة العربية السعودية.</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="countries.html">دول الاستقدام</a></li>
+                    <li><a href="map.html">خريطة الموقع</a></li>
+                    <li><a href="tel:+966">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>معلومات الاتصال</h3>
+                <p><i class="fas fa-phone"></i> +966 </p>
+                <p><i class="fas fa-envelope"></i> info@alkfaih.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> جازان، حي المطار</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="current-year">2025</span> شركة كفاءات العالم للأستقدام. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // تحديث السنة الحالية
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
