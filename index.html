@@ -70,12 +70,21 @@
                 كفاءات العالم <span>للاستقدام</span>
             </a>
         </div>
-        <ul class="nav-links">
+        
+        <!-- زر الهامبرجر -->
+        <button class="menu-toggle" id="menuToggle" aria-label="فتح/إغلاق القائمة">
+            <i class="fas fa-bars" id="menuIcon"></i>
+        </button>
+        
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html" class="active">الرئيسية</a></li>
             <li><a href="map.html">خريطة الموقع</a></li>
             <li><a href="countries.html">دول الاستقدام</a></li>
             <li><a href="https://wa.me/" target="_blank">تواصل معنا</a></li>
         </ul>
+        
+        <!-- طبقة التعتيم عند فتح القائمة -->
+        <div class="overlay-menu" id="overlayMenu"></div>
     </nav>
 
     <!-- Hero Section -->
