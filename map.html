@@ -31,6 +31,20 @@
             flex-direction: column;
             justify-content: center;
             overflow: hidden;
+            padding-top: 80px; /* مسافة للـ navbar الثابت */
+        }
+
+        @media (min-width: 768px) {
+            .map-hero-section {
+                padding-top: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .map-hero-section {
+                background-attachment: scroll;
+                height: 50vh;
+            }
         }
 
         .map-hero-content {
@@ -366,14 +380,14 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
-    border: 2px solid white; /* تغيير الحد إلى أبيض */
+            border: 2px solid white; /* تغيير الحد إلى أبيض */
             font-family: 'Tajawal', sans-serif;
             transition: all 0.3s ease;
         }
 
         .back-to-home .btn-outline:hover {
-           background: white; /* خلفية بيضاء عند التمرير */
-    color: #25d366; /* لون أخضر عند التمرير */
+            background: white; /* خلفية بيضاء عند التمرير */
+            color: #25d366; /* لون أخضر عند التمرير */
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
         }
@@ -400,7 +414,6 @@
         @media (max-width: 768px) {
             .map-hero-section {
                 height: 50vh;
-                background-attachment: scroll;
             }
             
             .map-hero-content h1 {
@@ -504,7 +517,8 @@
         .map-hero-content, .map-container-section, .contact-info-section, .hours-section {
             animation: fadeIn 1s ease-out;
         }
-                /* قسم التواصل */
+        
+        /* قسم التواصل */
         .contact-cta-section {
             padding: 80px 8%;
             background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
@@ -704,13 +718,22 @@
                 كفاءات العالم <span>للاستقدام</span>
             </a>
         </div>
-        <ul class="nav-links">
+        
+        <!-- زر الهامبرجر -->
+        <button class="menu-toggle" id="menuToggle" aria-label="فتح/إغلاق القائمة">
+            <i class="fas fa-bars" id="menuIcon"></i>
+        </button>
+        
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">الرئيسية</a></li>
             <li><a href="map.html" class="active">خريطة الموقع</a></li>
             <li><a href="countries.html">دول الاستقدام</a></li>
             <li><a href="" target="_blank">تواصل معنا</a></li>
         </ul>
     </nav>
+    
+    <!-- طبقة التعتيم للقائمة المتنقلة -->
+    <div class="overlay-menu" id="overlayMenu"></div>
 
     <!-- Hero Section -->
     <div class="map-hero-section">
@@ -808,18 +831,12 @@
                 </div>
             </div>
             <div class="back-to-home">
-        <a href="index.html" class="btn-outline">
-            <i class="fas fa-home"></i> العودة إلى الصفحة الرئيسية
-        </a>
-    </div>
+                <a href="index.html" class="btn-outline">
+                    <i class="fas fa-home"></i> العودة إلى الصفحة الرئيسية
+                </a>
+            </div>
         </div>
     </section>
-
-    <!-- Working Hours -->
-   
-
-    <!-- Back to Home -->
-    
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
@@ -851,7 +868,6 @@
 
     <!-- JavaScript Files -->
     <script src="main.js"></script>
-    <script src="map.js"></script>
     
 </body>
 </html>
