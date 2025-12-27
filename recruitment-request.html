@@ -283,30 +283,53 @@
             flex: 1;
         }
         
-        /* حاوية صورة السيفي */
+        /* حاوية صورة السيفي - معدلة للصور الطويلة */
         .cv-container {
             width: 100%;
-            height: 320px;
+            max-height: 700px;
             margin-bottom: 1.5rem;
             border-radius: 10px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             background: #f9f9f9;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        /* حاوية داخلية لضمان عرض الصورة كاملة */
+        .cv-inner-container {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding: 10px;
         }
         
         .cv-image {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: var(--transition);
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         
-        .cv-container:hover .cv-image {
-            transform: scale(1.02);
+        /* تلميح عند التمرير */
+        .cv-scroll-hint {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: none;
+        }
+        
+        .cv-container:hover .cv-scroll-hint {
+            display: block;
         }
         
         .worker-details {
@@ -385,6 +408,11 @@
             min-width: auto;
             font-size: 0.9rem;
             margin-bottom: 0.2rem;
+        }
+        
+        /* تعديلات للعرض الشبكي للتعامل مع الصور الطويلة */
+        .workers-grid-view .cv-container {
+            max-height: 500px;
         }
         
         /* رسالة عدم وجود نتائج */
@@ -468,7 +496,8 @@
         @media (max-width: 992px) {
             .recruitment-hero-content h1 { font-size: 2.5rem; }
             .workers-grid-view { grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); }
-            .cv-container { height: 280px; }
+            .cv-container { max-height: 600px; }
+            .workers-grid-view .cv-container { max-height: 450px; }
         }
         
         @media (max-width: 768px) {
@@ -478,14 +507,16 @@
             .worker-actions { flex-direction: column; }
             .btn-book, .btn-whatsapp { width: 100%; }
             .workers-grid-view { grid-template-columns: 1fr; }
-            .cv-container { height: 250px; }
+            .cv-container { max-height: 500px; }
+            .workers-grid-view .cv-container { max-height: 400px; }
         }
         
         @media (max-width: 480px) {
             .recruitment-hero-content h1 { font-size: 1.8rem; }
             .filter-section { padding: 1.5rem; }
             .worker-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-            .cv-container { height: 220px; }
+            .cv-container { max-height: 400px; }
+            .workers-grid-view .cv-container { max-height: 350px; }
         }
 
         /* تصميم الـ Navbar من صفحة الدول */
@@ -837,7 +868,7 @@
     </footer>
 
     <script>
-        // بيانات العمالة المتاحة للاستقدام مع صور السيرة الذاتية
+        // بيانات العمالة المتاحة للاستقدام مع صور السيرة الذاتية من GitHub
         const workersData = [
             {
                 id: 1,
@@ -869,7 +900,7 @@
                 status: "متاحة",
                 company: "شركة كفاءات العالم",
                 address: "جازان، حي المطار",
-                cvImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w-800&q=80",
+                cvImage: "https://raw.githubusercontent.com/WWW-Alhnani-COM/ALKFAIH/main/2.png",
                 phone: "+919876543210",
                 skills: ["قيادة السيارات", "صيانة بسيطة", "معرفة الطرق"]
             },
@@ -886,7 +917,7 @@
                 status: "متاحة",
                 company: "شركة كفاءات العالم",
                 address: "جازان، حي المطار",
-                cvImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                cvImage: "https://raw.githubusercontent.com/WWW-Alhnani-COM/ALKFAIH/main/3.png",
                 phone: "+8801912345678",
                 skills: ["تنظيف المنزل", "الطهي البسيط", "العناية بالمسنين"]
             },
@@ -903,7 +934,7 @@
                 status: "متاحة",
                 company: "شركة كفاءات العالم",
                 address: "جازان، حي المطار",
-                cvImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                cvImage: "https://raw.githubusercontent.com/WWW-Alhnani-COM/ALKFAIH/main/4.png",
                 phone: "+94711234567",
                 skills: ["رعاية الأطفال", "التعليم المبكر", "الطهي الصحي"]
             },
@@ -920,7 +951,7 @@
                 status: "متاحة",
                 company: "شركة كفاءات العالم",
                 address: "جازان، حي المطار",
-                cvImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                cvImage: "https://raw.githubusercontent.com/WWW-Alhnani-COM/ALKFAIH/main/5.png",
                 phone: "+923331234567",
                 skills: ["الحراسة", "المراقبة", "الإسعافات الأولية"]
             },
@@ -937,7 +968,7 @@
                 status: "متاحة",
                 company: "شركة كفاءات العالم",
                 address: "جازان، حي المطار",
-                cvImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                cvImage: "https://raw.githubusercontent.com/WWW-Alhnani-COM/ALKFAIH/main/6.png",
                 phone: "+251911234567",
                 skills: ["تنظيف المنزل", "العناية بالحديقة", "الطبخ الإثيوبي"]
             },
@@ -954,7 +985,7 @@
                 status: "متاحة",
                 company: "شركة كفاءات العالم",
                 address: "جازان، حي المطار",
-                cvImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                cvImage: "https://raw.githubusercontent.com/WWW-Alhnani-COM/ALKFAIH/main/7.png",
                 phone: "+254712345678",
                 skills: ["قيادة طويلة المدى", "إصلاح أعطال بسيطة", "معرفة GPS"]
             },
@@ -971,7 +1002,7 @@
                 status: "متاحة",
                 company: "شركة كفاءات العالم",
                 address: "جازان، حي المطار",
-                cvImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                cvImage: "https://raw.githubusercontent.com/WWW-Alhnani-COM/ALKFAIH/main/8.png",
                 phone: "+256781234567",
                 skills: ["رعاية المسنين", "الإسعافات الأولية", "إعطاء الأدوية"]
             }
@@ -1102,7 +1133,12 @@
                     <div class="worker-content">
                         <!-- حاوية صورة السيرة الذاتية (السيفي) -->
                         <div class="cv-container">
-                            <img src="${worker.cvImage}" alt="السيرة الذاتية لـ ${worker.name}" class="cv-image">
+                            <div class="cv-inner-container">
+                                <img src="${worker.cvImage}" alt="السيرة الذاتية لـ ${worker.name}" class="cv-image" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/WWW-Alhnani-COM/ALKFAIH/main/1.png';">
+                            </div>
+                            <div class="cv-scroll-hint">
+                                <i class="fas fa-arrow-down"></i> قم بالتمرير
+                            </div>
                         </div>
                         
                         <div class="worker-details">
@@ -1151,6 +1187,16 @@
                 `;
                 
                 workersContainer.appendChild(workerElement);
+                
+                // ضبط ارتفاع الصورة بعد تحميلها
+                const img = workerElement.querySelector('.cv-image');
+                img.onload = function() {
+                    // إذا كانت الصورة طويلة جداً، نضيف تلميح التمرير
+                    if (this.naturalHeight > 800) {
+                        const hint = workerElement.querySelector('.cv-scroll-hint');
+                        hint.style.display = 'block';
+                    }
+                };
             });
             
             // إضافة أحداث لأزرار الحجز والواتساب
