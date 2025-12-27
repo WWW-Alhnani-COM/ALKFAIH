@@ -519,6 +519,7 @@
             .workers-grid-view .cv-container { max-height: 350px; }
         }
 
+        /* ======== الهيدر من صفحة الدول ======== */
         /* تصميم الـ Navbar من صفحة الدول */
         .navbar {
             position: fixed;
@@ -610,6 +611,7 @@
                 display: block;
             }
         }
+        /* ======== نهاية الهيدر من صفحة الدول ======== */
         
         /* الفوتر من صفحة الدول */
         .footer {
@@ -697,6 +699,7 @@
     </style>
 </head>
 <body>
+    <!-- الهيدر المطابق لصفحة الدول -->
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">
@@ -705,6 +708,7 @@
             </a>
         </div>
         
+        <!-- زر الهامبرجر -->
         <button class="menu-toggle" id="menuToggle" aria-label="فتح/إغلاق القائمة">
             <i class="fas fa-bars" id="menuIcon"></i>
         </button>
@@ -716,8 +720,10 @@
             <li><a href="recruitment.html" class="active">طلب الاستقدام</a></li>
             <li><a href="https://wa.me/966" target="_blank">تواصل معنا</a></li>
         </ul>
-        <div class="overlay-menu" id="overlayMenu"></div>
     </nav>
+    
+    <!-- طبقة التعتيم للقائمة المتنقلة -->
+    <div class="overlay-menu" id="overlayMenu"></div>
 
     <!-- قسم البداية -->
     <section class="recruitment-hero">
@@ -1055,7 +1061,7 @@
                 input.addEventListener('input', filterWorkers);
             });
             
-            // القائمة المتنقلة
+            // القائمة المتنقلة - مطابقة لصفحة الدول
             menuToggle.addEventListener('click', toggleMenu);
             overlayMenu.addEventListener('click', toggleMenu);
             
@@ -1070,7 +1076,7 @@
             document.getElementById('current-year').textContent = new Date().getFullYear();
         }
 
-        // التحكم في القائمة المتنقلة
+        // التحكم في القائمة المتنقلة - مطابق لصفحة الدول
         function toggleMenu() {
             navLinks.classList.toggle('active');
             overlayMenu.classList.toggle('active');
