@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب استقدام | شركة كفاءات العالم للأستقدام</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&family=Changa:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيقات خاصة بصفحة طلب الاستقدام */
+        .request-hero {
+            background: url('https://raw.githubusercontent.com/WWW-Alhnani-COM/ALKFAIH/main/a.png') center/cover no-repeat;
+            min-height: 50vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px; /* مسافة للـ navbar الثابت */
+        }
+        
+        @media (min-width: 768px) {
+            .request-hero {
+                padding-top: 100px;
+            }
+        }
+        
+        .request-hero::after {
+            content: '';
+            position: absolute;
+            top:0; left:0; right:0; bottom:0;
+            background: rgba(0,0,0,0.6);
+        }
+        
+        .request-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+        }
+        
+        .request-hero-content h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .request-container {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        /* نموذج طلب الاستقدام */
+        .request-form-container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+            color: #2c3e50;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .required-field::after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        .form-note {
+            background: #f8f9fa;
+            border-right: 4px solid #3498db;
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            font-family: 'Tajawal', sans-serif;
+            color: #555;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 2.5rem auto 0;
+            font-family: 'Cairo', sans-serif;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(52, 152, 219, 0.4);
+        }
+        
+        /* قسم الخدمات */
+        .services-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #eaeaea;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-card i {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        /* قسم التواصل السريع */
+        .quick-contact-section {
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .quick-contact-section h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-options {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .contact-option {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 2rem;
+            border-radius: 15px;
+            min-width: 250px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-option:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+        
+        .contact-option i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-option h3 {
+            margin-bottom: 1rem;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .contact-option a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            margin-top: 1rem;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .contact-option a:hover {
+            text-decoration: underline;
+        }
+        
+        /* زر العودة للرئيسية */
+        .back-to-home {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .back-to-home .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: #3498db;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border: 2px solid #3498db;
+            font-family: 'Tajawal', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-home .btn-outline:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+        }
+        
+        /* التجاوب مع الجوال */
+        @media (max-width: 992px) {
+            .request-hero-content h1 { font-size: 2.5rem; }
+            .request-form-container { padding: 2rem; }
+        }
+        
+        @media (max-width: 768px) {
+            .request-hero-content h1 { font-size: 2rem; }
+            .request-container { padding: 3rem 5%; }
+            .contact-options { flex-direction: column; align-items: center; }
+            .contact-option { width: 100%; max-width: 400px; }
+        }
+        
+        @media (max-width: 480px) {
+            .request-hero-content h1 { font-size: 1.8rem; }
+            .submit-btn { width: 100%; padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" style="color: inherit; text-decoration: none;">
+                كفاءات العالم <span>للاستقدام</span>
+            </a>
+        </div>
+        
+        <!-- زر الهامبرجر -->
+        <button class="menu-toggle" id="menuToggle" aria-label="فتح/إغلاق القائمة">
+            <i class="fas fa-bars" id="menuIcon"></i>
+        </button>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="map.html">خريطة الموقع</a></li>
+            <li><a href="countries.html">دول الاستقدام</a></li>
+            <li><a href="recruitment-request.html" class="active">طلب استقدام</a></li>
+            <li><a href="https://wa.me/966" target="_blank">تواصل معنا</a></li>
+        </ul>
+    </nav>
+    
+    <!-- طبقة التعتيم للقائمة المتنقلة -->
+    <div class="overlay-menu" id="overlayMenu"></div>
+
+    <!-- قسم البداية -->
+    <section class="request-hero">
+        <div class="request-hero-content">
+            <h1>تقديم طلب استقدام</h1>
+            <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto;">املأ النموذج التالي لتقديم طلب استقدام وسيقوم فريقنا بالتواصل معك في أقرب وقت</p>
+        </div>
+    </section>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="request-container">
+        <div class="section-intro">
+            <h2 style="color: #2c3e50; margin-bottom: 1rem;">نموذج طلب الاستقدام</h2>
+            <p>يرجى تعبئة جميع الحقول المطلوبة (*) وسنقوم بالرد عليك خلال 24 ساعة عمل. يمكنك أيضاً التواصل معنا مباشرة عبر الواتساب للاستفسار السريع.</p>
+        </div>
+
+        <!-- نموذج طلب الاستقدام -->
+        <div class="request-form-container">
+            <form id="recruitmentForm">
+                <div class="form-note">
+                    <i class="fas fa-info-circle"></i>
+                    جميع البيانات المقدمة ستكون سرية ولن يتم مشاركتها مع أي طرف ثالث.
+                </div>
+                
+                <h3 style="color: #2c3e50; margin-bottom: 1.5rem; font-family: 'Cairo', sans-serif;">البيانات الشخصية</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName" class="required-field">الاسم الكامل</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="الاسم الثلاثي">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nationalId" class="required-field">رقم الهوية / الإقامة</label>
+                        <input type="text" id="nationalId" name="nationalId" required placeholder="رقم الهوية أو الإقامة">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone" class="required-field">رقم الجوال</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="05xxxxxxxx">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="required-field">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" required placeholder="example@domain.com">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city" class="required-field">المدينة</label>
+                        <input type="text" id="city" name="city" required placeholder="المدينة التي تقيم فيها">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nationality" class="required-field">الجنسية</label>
+                        <select id="nationality" name="nationality" required>
+                            <option value="">اختر الجنسية</option>
+                            <option value="سعودي">سعودي</option>
+                            <option value="مقيم">مقيم</option>
+                            <option value="خليجي">خليجي</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <hr style="margin: 2.5rem 0; border: 1px solid #eaeaea;">
+                
+                <h3 style="color: #2c3e50; margin-bottom: 1.5rem; font-family: 'Cairo', sans-serif;">بيانات طلب الاستقدام</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="workerType" class="required-field">نوع العامل/ة المطلوب/ة</label>
+                        <select id="workerType" name="workerType" required>
+                            <option value="">اختر النوع</option>
+                            <option value="سائق">سائق</option>
+                            <option value="طباخ">طباخ</option>
+                            <option value="خادمة منزلية">خادمة منزلية</option>
+                            <option value="مربية أطفال">مربية أطفال</option>
+                            <option value="ممرضة مسنة">ممرضة مسنة</option>
+                            <option value="حارس أمن">حارس أمن</option>
+                            <option value="عامل نظافة">عامل نظافة</option>
+                            <option value="عامل زراعة">عامل زراعة</option>
+                            <option value="أخرى">أخرى (حدد في الملاحظات)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="workerGender" class="required-field">جنس العامل/ة</label>
+                        <select id="workerGender" name="workerGender" required>
+                            <option value="">اختر الجنس</option>
+                            <option value="ذكر">ذكر</option>
+                            <option value="أنثى">أنثى</option>
+                            <option value="لا يهم">لا يهم</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="workerNationality" class="required-field">جنسية العامل/ة المطلوبة</label>
+                        <select id="workerNationality" name="workerNationality" required>
+                            <option value="">اختر الجنسية</option>
+                            <option value="فلبيني">فلبيني</option>
+                            <option value="هندي">هندي</option>
+                            <option value="بنغلاديشي">بنغلاديشي</option>
+                            <option value="سريلانكي">سريلانكي</option>
+                            <option value="إثيوبي">إثيوبي</option>
+                            <option value="كينيا">كينيا</option>
+                            <option value="لا يهم">لا يهم (الأفضل سعراً)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience" class="required-field">الخبرة المطلوبة</label>
+                        <select id="experience" name="experience" required>
+                            <option value="">اختر مستوى الخبرة</option>
+                            <option value="بدون خبرة">بدون خبرة</option>
+                            <option value="أقل من سنة">أقل من سنة</option>
+                            <option value="1-3 سنوات">1-3 سنوات</option>
+                            <option value="3-5 سنوات">3-5 سنوات</option>
+                            <option value="أكثر من 5 سنوات">أكثر من 5 سنوات</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="expectedSalary" class="required-field">الراتب المتوقع (ريال سعودي)</label>
+                    <input type="number" id="expectedSalary" name="expectedSalary" required placeholder="الحد الأدنى للراتب الشهري" min="800" step="50">
+                </div>
+                
+                <div class="form-group">
+                    <label for="startDate" class="required-field">تاريخ البدء المطلوب</label>
+                    <input type="date" id="startDate" name="startDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">ملاحظات إضافية</label>
+                    <textarea id="notes" name="notes" placeholder="أي معلومات إضافية أو متطلبات خاصة..."></textarea>
+                </div>
+                
+                <div class="form-note">
+                    <i class="fas fa-shield-alt"></i>
+                    نضمن لك سرية البيانات وعدم مشاركتها مع أي طرف ثالث. جميع العمالة المقدمة تكون مدربة ومرخصة.
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> إرسال طلب الاستقدام
+                </button>
+            </form>
+        </div>
+
+        <!-- قسم الخدمات -->
+        <section class="services-section">
+            <div class="section-intro">
+                <h2 style="color: #2c3e50; margin-bottom: 1rem;">خدماتنا الشاملة</h2>
+                <p>نقدم مجموعة متكاملة من الخدمات لضمان رضاك التام عن عملية الاستقدام</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-user-check"></i>
+                    <h3>فحص واختيار دقيق</h3>
+                    <p>فحص دقيق لجميع الوثائق والمؤهلات واختبارات المهارات قبل القبول</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>إجراءات قانونية كاملة</h3>
+                    <p>نقوم بجميع الإجراءات القانونية والورقية مع الجهات المعنية</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>ترحيل وتذاكر سفر</h3>
+                    <p>نضمن وصول العامل/ة بأفضل التذاكر وأسرع الطرق</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>دعم ومتابعة مستمرة</h3>
+                    <p>دعم فني ومتابعة مستمرة لمدة 3 أشهر بعد وصول العامل/ة</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم التواصل السريع -->
+        <section class="quick-contact-section">
+            <h2>تواصل معنا مباشرة</h2>
+            <p style="max-width: 700px; margin: 0 auto 1.5rem; opacity: 0.9;">لديك استفسار عاجل؟ يمكنك التواصل معنا مباشرة عبر أي من الوسائل التالية</p>
+            
+            <div class="contact-options">
+                <div class="contact-option">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>واتساب فوري</h3>
+                    <p>للرد السريع على استفساراتك</p>
+                    <a href="https://wa.me/966" target="_blank">اضغط للتواصل عبر واتساب</a>
+                </div>
+                
+                <div class="contact-option">
+                    <i class="fas fa-phone"></i>
+                    <h3>اتصال هاتفي</h3>
+                    <p>من الأحد إلى الخميس 8ص - 5م</p>
+                    <a href="tel:+966">+966</a>
+                </div>
+                
+                <div class="contact-option">
+                    <i class="fas fa-envelope"></i>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>للطلبات الرسمية والاستفسارات</p>
+                    <a href="mailto:info@alkfaih.com">info@alkfaih.com</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- زر العودة للرئيسية -->
+        <div class="back-to-home">
+            <a href="index.html" class="btn-outline">
+                <i class="fas fa-home"></i> العودة إلى الصفحة الرئيسية
+            </a>
+        </div>
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>كفاءات العالم للاستقدام</h3>
+                <p>شركة رائدة في مجال استقدام العمالة المنزلية المدربة في المملكة العربية السعودية.</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="recruitment-request.html">طلب استقدام</a></li>
+                    <li><a href="countries.html">دول الاستقدام</a></li>
+                    <li><a href="map.html">خريطة الموقع</a></li>
+                    <li><a href="tel:+966">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>معلومات الاتصال</h3>
+                <p><i class="fas fa-phone"></i> +966 </p>
+                <p><i class="fas fa-envelope"></i> info@alkfaih.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> جازان، حي المطار</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="current-year">2025</span> شركة كفاءات العالم للأستقدام. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="main.js"></script>
+    <script>
+        // معالجة نموذج طلب الاستقدام
+        document.getElementById('recruitmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // التحقق من صحة النموذج
+            const form = e.target;
+            let isValid = true;
+            
+            // التحقق من الحقول المطلوبة
+            const requiredFields = form.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = '#e74c3c';
+                } else {
+                    field.style.borderColor = '#e0e0e0';
+                }
+            });
+            
+            if (!isValid) {
+                alert('يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+            
+            // تجميع البيانات (في تطبيق حقيقي، هنا ستتم إرسال البيانات إلى الخادم)
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // عرض رسالة نجاح (بدلاً من إرسال حقيقي في هذا المثال)
+            alert(`تم استلام طلبك بنجاح! رقم الطلب: #${Math.floor(100000 + Math.random() * 900000)}\nسنقوم بالتواصل معك خلال 24 ساعة عمل.`);
+            
+            // إعادة تعيين النموذج
+            form.reset();
+            
+            // في التطبيق الحقيقي، هنا سيتم إرسال البيانات عبر AJAX
+            // fetch('process-recruitment.php', {
+            //     method: 'POST',
+            //     body: formData
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     if (data.success) {
+            //         alert('تم إرسال طلبك بنجاح!');
+            //         form.reset();
+            //     }
+            // })
+            // .catch(error => {
+            //     console.error('Error:', error);
+            //     alert('حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.');
+            // });
+        });
+        
+        // إعداد الحد الأدنى لتاريخ البدء (اليوم + 30 يوم)
+        const startDateInput = document.getElementById('startDate');
+        const today = new Date();
+        const minDate = new Date(today);
+        minDate.setDate(today.getDate() + 30);
+        
+        const formatDate = (date) => {
+            return date.toISOString().split('T')[0];
+        };
+        
+        startDateInput.min = formatDate(minDate);
+        startDateInput.value = formatDate(minDate);
+        
+        // إضافة سنة حية للفوتر
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
