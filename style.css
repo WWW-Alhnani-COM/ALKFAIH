@@ -84,23 +84,30 @@ body, html {
 }
 /* تنسيق هيدر الفوتر (الصور الثلاث) */
 .footer-logos-header {
-    background-color: #ffffff; /* لون الخلفية أبيض */
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
-    padding: 40px 0;
+    padding: 30px 0;
     flex-wrap: wrap;
-    width: 100%; /* لضمان ملء العرض بالكامل */
+
+    /* جعل الحواف دائرية */
+    border-radius: 20px; 
+    
+    /* إضافة مسافات حول القسم لكي يظهر شكل الحواف الدائرية */
+    margin: 20px 8%; 
+    
+    /* إضافة ظل خفيف لإبراز القسم */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    
+    width: auto; /* لكي لا يأخذ العرض الكامل وتظهر الحواف */
 }
 .footer-logos-header .logo-item img {
-    max-height: 70px; /* التحكم في ارتفاع الصور */
+    max-height: 60px;
     width: auto;
-    display: block;
-    
-    /* إذا كانت الصور ملونة وتريد تركها كما هي، احذف سطر الفلتر بالأسفل */
-    /* filter: grayscale(100%); */ /* اختياري: لجعل الصور رمادية لتناسب التصميم */
-    
+    /* تأكد من عدم وجود فلاتر تجعل الصور بيضاء هنا لأن الخلفية أصبحت بيضاء */
+    filter: none; 
     transition: transform 0.3s ease;
 }
 
